@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PayMax - Payroll Management System</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><i class="fas fa-money-check-alt"></i> PayMax</h1>
+        <nav>
+            <a href="#dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+            <a href="#employees"><i class="fas fa-users"></i> Employees</a>
+            <a href="#reports"><i class="fas fa-chart-bar"></i> Reports</a>
+            <a href="#settings"><i class="fas fa-cog"></i> Settings</a>
+        </nav>
+    </header>
+    
+    <main>
+        <div id="notification" class="notification">
+            Employee data saved successfully!
+        </div>
+
+        <div class="container">
+            <section id="add-employee">
+                <h2><i class="fas fa-user-plus"></i> Add Employee</h2>
+                <div class="card">
+                    <form id="employee-form">
+                        <div class="form-group">
+                            <label for="name">Full Name:</label>
+                            <input type="text" id="name" name="name" placeholder="Enter employee name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="id">Employee ID:</label>
+                            <input type="text" id="id" name="id" placeholder="Enter employee ID" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="department">Department:</label>
+                            <input type="text" id="department" name="department" placeholder="Enter department" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="basic">Basic Pay ($):</label>
+                            <input type="number" id="basic" name="basic" placeholder="Enter basic pay amount" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="position">Position:</label>
+                            <input type="text" id="position" name="position" placeholder="Enter job position" required>
+                        </div>
+                        
+                        <button type="submit" id="submit-btn">
+                            <i class="fas fa-plus-circle"></i> Add Employee
+                        </button>
+                    </form>
+                </div>
+            </section>
+            
+            <section id="employee-data">
+                <h2><i class="fas fa-table"></i> Employee Database</h2>
+                <div class="card">
+                    <table id="employee-table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>ID</th>
+                                <th>Department</th>
+                                <th>Position</th>
+                                <th>Basic Pay</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="employee-tbody">
+                            <!-- Employee rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                    <div id="empty-state" class="empty-state">
+                        <i class="fas fa-users fa-3x"></i>
+                        <p>No employees added yet. Add your first employee using the form.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 PayMax Payroll Management System | <a href="#">Privacy Policy</a> | <a href="#">Support</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
